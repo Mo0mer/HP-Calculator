@@ -652,8 +652,8 @@ for y in ur:
 
 tp = IntVar()
 tp.set(10)
-pry = Radiobutton(root, text='Преим.', fg='#000000', bg='#1E90FF', variable=tp, value=1)
-pm = Radiobutton(root, text='Помех.', fg='#000000', bg='#1E90FF', variable=tp, value=2)
-pmn = Radiobutton(root, text='Норма.', fg='#000000', bg='#1E90FF', variable=tp, value=0)
+pry = Radiobutton(root, text='Преим.', fg='#00FF00', bg='#CD5C5C', variable=tp, value=1)
+pm = Radiobutton(root, text='Помех.', fg='#00FF00', bg='#CD5C5C', variable=tp, value=2)
+pmn = Radiobutton(root, text='Норма.', fg='#00FF00', bg='#CD5C5C', variable=tp, value=0)
 
 root.mainloop()
