@@ -579,7 +579,7 @@ root1 = Tk()  # Главное окно
 root1.title('Счетчик хп')
 root1.geometry('500x220+400+300')
 
-MyBtn = Button(root.configure(bg='#8B4513'), text="Start", font='Times 40', bg="#FFF8DC", fg='#800000', width=3, command=mybtnclick)  # Кнопка
+MyBtn = Button(root.configure(bg='#90EE90'), text="Start", font='Times 40', bg="#FFF8DC", fg='#800000', width=3, command=mybtnclick)  # Кнопка
 MyBtn.place(x=200, y=50)
 
 nametext = StringVar()
