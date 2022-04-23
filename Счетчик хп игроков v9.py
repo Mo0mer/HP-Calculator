@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter import messagebox
 from random import randint
+import PIL
+from PIL import ImageTk
 
 UserName = ''
 sus = []
@@ -46,10 +48,12 @@ def uizf():
 
 
 def elnabf():
-    elbox.place(x=0, y=0)
-    urbox.place(x=300, y=0)
-    soprdmg.place(x=120, y=60)
-    uizdmg.place(x=420, y=60)
+    elbox.place(x=20, y=40)
+    urbox.place(x=280, y=40)
+    soprdmg.place(x=150, y=110)
+    uizdmg.place(x=410, y=110)
+    soprout.place(x=20, y=10, width=120)
+    uizout.place(x=280, y=10, width=120)
 
 
 def probf():
@@ -331,7 +335,7 @@ def mybtnclick():  # Функция нажатия на кнопку ОК
     hptext.set("ХП героя")
     kdtext.set("КД героя")
     fzgamet.set("Фаза создания")
-    elnab.place(x=370, y=150)
+    elnab.place(x=160, y=180, width=80)
     fzgame.place(x=0, y=30, width=500)
     name.place(x=50, y=70 + 20, width=100)
     hpout.place(x=200, y=70 + 20, width=100)
@@ -352,6 +356,8 @@ def choiceplace():  # Функция нажатия на кнопку Закон
     messagebox.showinfo('Счетчик хп', 'Набор закончен')
     for i in char:
         chlistbox.insert(END, i)
+    soprout.place_forget()
+    uizout.place_forget()
     cthero.place_forget()
     name.place_forget()
     hpout.place_forget()
@@ -371,8 +377,9 @@ def choiceplace():  # Функция нажатия на кнопку Закон
     nametext.set("Имя персонажа")
     name.place(x=110, y=60 + 30, width=150)
     choiceclick.place(x=280, y=75 + 30)
-    urbox.place(x=250, y=0)
-    dpdmg.place(x=0, y=0)
+    urbox.place(x=140, y=40)
+    dpdmg.place(x=280, y=110)
+    dpdgout.place(x=140, y=10, width=120)
 
 
 def nabhero():  # Функция для создания героев
@@ -506,10 +513,10 @@ def damage():
     if flag:
         dmg = dmg * 2
     if dpflag:
-        if dpdg[0] in els:
+        if dpdg[0] in sus[4]:
             messagebox.showinfo(sus[0], 'Сопротивление')
             dmg = int(dmg / 2)
-        elif dpdg[0] in ur:
+        elif dpdg[0] in sus[6]:
             messagebox.showinfo(sus[0], 'Уязвимость')
             dmg = dmg * 2
     sus[1] = sus[1] - dmg
@@ -547,7 +554,7 @@ def damage():
         pre.place_forget()
         inkd.place_forget()
         revclickend.place(x=220, y=50)
-        revclickend.configure(font='Times 40', fg='#008000')
+        revclickend.configure(font='Times 40', fg='#20B2AA')
     else:
         chlistbox.delete(0, END)
         krit.place_forget()
@@ -566,20 +573,23 @@ def damage():
         name.place(x=110, y=60 + 30, width=150)
         for i in char:
             chlistbox.insert(END, i)
-        print(*char)
-        print(dpdg)
+        print(*char, sep='\n')
         dpdg = []
 
 
 root = Tk()  # Главное окно
 root.title('Счетчик хп')
-root.geometry('500x220+300+200')
+root.geometry('500x220+400+120')
+root.iconphoto(True, PhotoImage(file='D:\Задачи ЕГЭ\Разное\icon.png'))  # подставить свою
+image_ismkd = PhotoImage(file='m_smena_kd.png')
+image_prob = PhotoImage(file='m_m_probitie.png')
 
-root1 = Tk()  # Главное окно
-root1.title('Счетчик хп')
-root1.geometry('500x220+400+300')
+root1 = Tk()  # Дополнительное окно
+root1.title(' ')
+root1.geometry('500x250+400+370')
 
-MyBtn = Button(root.configure(bg='#371900'), text="Start", font='Times 40', bg="#FFE3CC", fg='#000000', width=3, command=mybtnclick)  # Кнопка
+MyBtn = Button(root, font='Times 10', bg="#FF0000", fg='#FFFFFF', command=mybtnclick,
+               relief='flat')  # Кнопка
 MyBtn.place(x=200, y=50)
 
 nametext = StringVar()
@@ -590,13 +600,16 @@ ctherot = StringVar()
 fzgamet = StringVar()
 kritt = StringVar()
 
-name = Label(root, textvariable=nametext, fg="#000000", bg="#FFE3CC", font='Times 14')  # Имя героя(текст)
-hpout = Label(root, textvariable=hptext, fg="#000000", bg="#FFE3CC", font='Times 14')  # Хп героя(текст)
-kdout = Label(root, textvariable=kdtext, fg="#000000", bg="#FFE3CC", font='Times 14')  # Кд героя(текст)
-bonpout = Label(root, textvariable=bonpt, fg="#000000", bg="#FFE3CC", font='Times 14')  # Бонус к попаданию(текст)
-cthero = Label(root, textvariable=ctherot, fg="#000000", bg="#FFE3CC", font='Times 14')  # Кол-во героев(текст)
-fzgame = Label(root, textvariable=fzgamet, fg="#000000", bg="#FFE3CC", font='Times 14')  # Фаза игры
-krit = Label(root, textvariable=kritt, fg="#000000", bg="#FFE3CC", font='Times 14')
+name = Label(root, textvariable=nametext, fg="#eee", bg="#20B2AA", font='Times 14')  # Имя героя(текст)
+hpout = Label(root, textvariable=hptext, fg="#eee", bg="#20B2AA", font='Times 14')  # Хп героя(текст)
+kdout = Label(root, textvariable=kdtext, fg="#eee", bg="#20B2AA", font='Times 14')  # Кд героя(текст)
+bonpout = Label(root, textvariable=bonpt, fg="#eee", bg="#20B2AA", font='Times 14')  # Бонус к попаданию(текст)
+cthero = Label(root, textvariable=ctherot, fg="#eee", bg="#20B2AA", font='Times 14')  # Кол-во героев(текст)
+fzgame = Label(root, textvariable=fzgamet, fg="#eee", bg="#20B2AA", font='Times 14')  # Фаза игры
+krit = Label(root, textvariable=kritt, fg="#eee", bg="#20B2AA", font='Times 14')
+soprout = Label(root1, text='Сопротивление', fg="#eee", bg="#20B2AA", font='Times 12')
+uizout = Label(root1, text='Уязвимость', fg="#eee", bg="#20B2AA", font='Times 12')
+dpdgout = Label(root1, text='Вид урона', fg="#eee", bg="#20B2AA", font='Times 12')
 
 nameinp = StringVar()
 hpinp = StringVar()
@@ -612,27 +625,27 @@ hp = Entry(root, textvariable=hpinp)  # Ввод хп героя
 kd = Entry(root, textvariable=kdinp)  # Ввод кд героя
 hl = Entry(root, textvariable=hilinp)  # Ввод хила
 
-revnab = Button(root, text="Добавить героя", font='Times 12', fg="#000000", command=nabhero)  # Кнопка +герой
-endnab = Button(root, text='Закончить набор', font='Times 12', fg='#000000', command=choiceplace)  # Кнопка завершения
-atackclick = Button(root, text='Атака', font='Times 18', fg='#000000', command=prdamage)  # Кнопка ОК
-dmgclick = Button(root, text='Бам!', font='Times 18', fg='#000000', command=damage)  # Кнопка нанесения урона
-hilclick = Button(root, text='Исцеление', font='Times 18', fg='#000000', command=hil)  # Кнопка исцеления
-choiceclick = Button(root, text='OK', font='Times 18', fg='#000000', command=nextfaze)  # Кнопка продолжения
-revclick = Button(root, text='↺', font='Times 11', width=3, fg='#000000', bg='#FFE3CC', command=rever)
-revclickend = Button(root, text='↺', font='Times 40', width=3, fg='#000000', command=reverend)
-otkat = Button(root, text='⟸', font='Times 11', fg='#000000', bg='#FFE3CC', command=otk)
-dop = Button(root, text='Доп.действия', font='Times 11', fg='#000000', command=dopf)
-pre = Button(root, text='Доп.ВА', font='Times 11', fg='#000000', command=pref)
-inkd = Button(root, text='Изм.Кд', font='Times 11', fg='#000000', command=vkd)
-ismkd = Button(root, text='⊚', font='Times 13', fg='#000000', bg='#FFE3CC', command=iskd)
-ismkdpl = Button(root, text='+', font='Times 11', fg='#000000', bg='#FFE3CC', command=plus)
-ismkdmn = Button(root, text='-', font='Times 11', fg='#000000', bg='#FFE3CC', command=minus)
-prob = Button(root, text='➴', font='Times 11', fg='#000000', bg='#FFE3CC', command=probf)
-atk = Button(root, text='Доп.атака', font='Times 11', fg='#000000', command=atkf)
-elnab = Button(root, text='Доб.хар.', font='Times 11', fg='#000000', command=elnabf)
-soprdmg = Button(root1, text='Доб.сопр', font='Times 11', fg='#000000', command=soprf)
-uizdmg = Button(root1, text='Доб.уязв', font='Times 11', fg='#000000', command=uizf)
-dpdmg = Button(root1, text='Доб.урон', font='Times 11', fg='#000000', command=dpdmg)
+revnab = Button(root, text="Добавить героя", font='Times 12', fg="#20B2AA", command=nabhero)  # Кнопка +герой
+endnab = Button(root, text='Закончить набор', font='Times 12', fg='#20B2AA', command=choiceplace)  # Кнопка завершения
+atackclick = Button(root, text='Атака', font='Times 18', fg='#20B2AA', command=prdamage)  # Кнопка ОК
+dmgclick = Button(root, text='Бам!', font='Times 18', fg='#20B2AA', command=damage)  # Кнопка нанесения урона
+hilclick = Button(root, text='Исцеление', font='Times 18', fg='#20B2AA', command=hil)  # Кнопка исцеления
+choiceclick = Button(root, text='OK', font='Times 18', fg='#20B2AA', command=nextfaze)  # Кнопка продолжения
+revclick = Button(root, text='↺', font='Times 11', width=3, fg='#FFFFFF', bg='#1E90FF', command=rever)
+revclickend = Button(root, text='↺', font='Times 40', width=3, fg='#20B2AA', command=reverend)
+otkat = Button(root, text='⟸', font='Times 11', fg='#FFFFFF', bg='#1E90FF', command=otk)
+dop = Button(root, text='Доп.действия', font='Times 11', fg='#20B2AA', command=dopf)
+pre = Button(root, text='Доп.ВА', font='Times 11', fg='#20B2AA', command=pref)
+inkd = Button(root, text='Изм.Кд', font='Times 11', fg='#20B2AA', command=vkd)
+ismkd = Button(root, font='Times 13', fg='#FFFFFF', bg='#1E90FF', command=iskd, image=image_ismkd)
+ismkdpl = Button(root, text='+', font='Times 11', fg='#FFFFFF', bg='#1E90FF', command=plus)
+ismkdmn = Button(root, text='-', font='Times 11', fg='#FFFFFF', bg='#1E90FF', command=minus)
+prob = Button(root, font='Times 11', fg='#FFFFFF', bg='#1E90FF', command=probf, image=image_prob)
+atk = Button(root, text='Доп.атака', font='Times 11', fg='#20B2AA', command=atkf)
+elnab = Button(root, text='Доб.хар.', font='Times 12', fg='#20B2AA', command=elnabf)
+soprdmg = Button(root1, text='+', font='Times 15', bg='#20B2AA', fg='#eee', command=soprf, width=3)
+uizdmg = Button(root1, text='+', font='Times 15', bg='#20B2AA', fg='#eee', command=uizf, width=3)
+dpdmg = Button(root1, text='+', font='Times 15', bg='#20B2AA', fg='#eee', command=dpdmg, width=3)
 
 chlistbox = Listbox(root, height=3, width=20, selectmode=SINGLE)  # Список с героями
 
@@ -652,8 +665,8 @@ for y in ur:
 
 tp = IntVar()
 tp.set(10)
-pry = Radiobutton(root, text='Преим.', fg='#000000', bg='#FFE3CC', variable=tp, value=1)
-pm = Radiobutton(root, text='Помех.', fg='#000000', bg='#FFE3CC', variable=tp, value=2)
-pmn = Radiobutton(root, text='Норма.', fg='#000000', bg='#FFE3CC', variable=tp, value=0)
+pry = Radiobutton(root, text='Преим.', fg='#000000', bg='#1E90FF', variable=tp, value=1)
+pm = Radiobutton(root, text='Помех.', fg='#000000', bg='#1E90FF', variable=tp, value=2)
+pmn = Radiobutton(root, text='Норма.', fg='#000000', bg='#1E90FF', variable=tp, value=0)
 
 root.mainloop()
