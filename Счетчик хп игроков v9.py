@@ -547,7 +547,7 @@ def damage():
         pre.place_forget()
         inkd.place_forget()
         revclickend.place(x=220, y=50)
-        revclickend.configure(font='Times 40', fg='#000000')
+        revclickend.configure(font='Times 40', fg='#008000')
     else:
         chlistbox.delete(0, END)
         krit.place_forget()
