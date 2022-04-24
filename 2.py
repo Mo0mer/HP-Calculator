@@ -590,13 +590,13 @@ ctherot = StringVar()
 fzgamet = StringVar()
 kritt = StringVar()
 
-name = Label(root, textvariable=nametext, fg="#000000", bg="#B68E6D", font='Times 14')  # Имя героя(текст)
-hpout = Label(root, textvariable=hptext, fg="#000000", bg="#B68E6D", font='Times 14')  # Хп героя(текст)
-kdout = Label(root, textvariable=kdtext, fg="#000000", bg="#B68E6D", font='Times 14')  # Кд героя(текст)
-bonpout = Label(root, textvariable=bonpt, fg="#000000", bg="#B68E6D", font='Times 14')  # Бонус к попаданию(текст)
-cthero = Label(root, textvariable=ctherot, fg="#000000", bg="#B68E6D", font='Times 14')  # Кол-во героев(текст)
-fzgame = Label(root, textvariable=fzgamet, fg="#000000", bg="#B68E6D", font='Times 14')  # Фаза игры
-krit = Label(root, textvariable=kritt, fg="#000000", bg="#B68E6D", font='Times 14')
+name = Label(root.configure(bg='#B68E6D'), textvariable=nametext, fg="#000000", bg="#B68E6D", font='Times 14')  # Имя героя(текст)
+hpout = Label(root.configure(bg='#B68E6D'), textvariable=hptext, fg="#000000", bg="#B68E6D", font='Times 14')  # Хп героя(текст)
+kdout = Label(root.configure(bg='#B68E6D'), textvariable=kdtext, fg="#000000", bg="#B68E6D", font='Times 14')  # Кд героя(текст)
+bonpout = Label(root.configure(bg='#B68E6D'), textvariable=bonpt, fg="#000000", bg="#B68E6D", font='Times 14')  # Бонус к попаданию(текст)
+cthero = Label(root.configure(bg='#B68E6D'), textvariable=ctherot, fg="#000000", bg="#B68E6D", font='Times 14')  # Кол-во героев(текст)
+fzgame = Label(root.configure(bg='#B68E6D'), textvariable=fzgamet, fg="#000000", bg="#B68E6D", font='Times 14')  # Фаза игры
+krit = Label(root.configure(bg='#B68E6D'), textvariable=kritt, fg="#000000", bg="#B68E6D", font='Times 14')
 
 nameinp = StringVar()
 hpinp = StringVar()
