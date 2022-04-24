@@ -590,7 +590,7 @@ ctherot = StringVar()
 fzgamet = StringVar()
 kritt = StringVar()
 
-name = Label(root, textvariable=nametext, fg="#000000", bg="#B68E6D", font='Times 14')  # Имя героя(текст)
+name = Label(root, textvariable=nametext, fg="#000000", bg="#FF9842", font='Times 14')  # Имя героя(текст)
 hpout = Label(root, textvariable=hptext, fg="#000000", bg="#B68E6D", font='Times 14')  # Хп героя(текст)
 kdout = Label(root, textvariable=kdtext, fg="#000000", bg="#B68E6D", font='Times 14')  # Кд героя(текст)
 bonpout = Label(root, textvariable=bonpt, fg="#000000", bg="#B68E6D", font='Times 14')  # Бонус к попаданию(текст)
@@ -614,7 +614,7 @@ hl = Entry(root, textvariable=hilinp)  # Ввод хила
 
 revnab = Button(root, bg="#FF9842", text="Добавить героя", font='Times 12', fg="#000000", command=nabhero)  # Кнопка +герой
 endnab = Button(root, bg="#FF9842", text='Закончить набор', font='Times 12', fg='#000000', command=choiceplace)  # Кнопка завершения
-atackclick = Button(root, bg="#B68E6D", text='Атака', font='Times 18', fg='#000000', command=prdamage)  # Кнопка ОК
+atackclick = Button(root, bg="#FF9842", text='Атака', font='Times 18', fg='#000000', command=prdamage)  # Кнопка ОК
 dmgclick = Button(root, bg="#B68E6D", text='Бам!', font='Times 18', fg='#000000', command=damage)  # Кнопка нанесения урона
 hilclick = Button(root, bg="#B68E6D", text='Исцеление', font='Times 18', fg='#000000', command=hil)  # Кнопка исцеления
 choiceclick = Button(root, bg="#B68E6D", text='OK', font='Times 18', fg='#000000', command=nextfaze)  # Кнопка продолжения
