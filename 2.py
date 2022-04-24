@@ -616,7 +616,7 @@ revnab = Button(root, bg="#FFA55A", text="Добавить героя", font='Ti
 endnab = Button(root, bg="#FFA55A", text='Закончить набор', font='Times 12', fg='#000000', command=choiceplace)  # Кнопка завершения
 atackclick = Button(root, bg="#A64933", text='Атака', font='Times 18', fg='#000000', command=prdamage)  # Кнопка ОК
 dmgclick = Button(root, bg="#B68E6D", text='Бам!', font='Times 18', fg='#000000', command=damage)  # Кнопка нанесения урона
-hilclick = Button(root, bg="#FFA55A", text='Исцеление', font='Times 18', fg='#000000', command=hil)  # Кнопка исцеления
+hilclick = Button(root, bg="#165616", text='Исцеление', font='Times 18', fg='#FFFFFF', command=hil)  # Кнопка исцеления
 choiceclick = Button(root, bg="#B68E6D", text='OK', font='Times 18', fg='#000000', command=nextfaze)  # Кнопка продолжения
 revclick = Button(root, text='↺', font='Times 11', width=3, fg='#FFE0C9', bg='#A66433', command=rever)
 revclickend = Button(root, bg="#B68E6D", text='↺', font='Times 40', width=3, fg='#FFE0C9', command=reverend)
