@@ -17,9 +17,81 @@ flag = ''
 soprflag = False
 uizflag = False
 dpflag = False
-sopr = []
-uiz = []
+sopr = ['Сопр - ']
+uiz = ['Уяз - ']
 dpdg = []
+
+
+def obnovherof():
+    global char
+    global charc
+    chlistbox.place_forget()
+    bonp.place_forget()
+    namehero.place_forget()
+    hp.place_forget()
+    kd.place_forget()
+    hl.place_forget()
+    revnab.place_forget()
+    endnab.place_forget()
+    atackclick.place_forget()
+    dmgclick.place_forget()
+    hilclick.place_forget()
+    choiceclick.place_forget()
+    name.place_forget()
+    hpout.place_forget()
+    kdout.place_forget()
+    bonpout.place_forget()
+    cthero.place_forget()
+    nametext.set("Имя героя")
+    hptext.set("ХП героя")
+    kdtext.set("КД героя")
+    fzgamet.set("Фаза создания")
+    chlistbox.delete(0, END)
+    char = []
+    charc = []
+    for i in charc:
+        chlistbox.insert(END, i)
+    name.place(x=50, y=70 + 20, width=100)
+    hpout.place(x=200, y=70 + 20, width=100)
+    kdout.place(x=350, y=70 + 20, width=100)
+    namehero.place(x=50, y=100 + 20, width=100)
+    hp.place(x=200, y=100 + 20, width=100)
+    kd.place(x=350, y=100 + 20, width=100)
+    revnab.place(x=245, y=180, width=120)
+    endnab.place(x=370, y=180, width=120)
+
+
+def dobavherof():
+    chlistbox.place_forget()
+    bonp.place_forget()
+    namehero.place_forget()
+    hp.place_forget()
+    kd.place_forget()
+    hl.place_forget()
+    revnab.place_forget()
+    endnab.place_forget()
+    atackclick.place_forget()
+    dmgclick.place_forget()
+    hilclick.place_forget()
+    choiceclick.place_forget()
+    name.place_forget()
+    hpout.place_forget()
+    kdout.place_forget()
+    bonpout.place_forget()
+    cthero.place_forget()
+    nametext.set("Имя героя")
+    hptext.set("ХП героя")
+    kdtext.set("КД героя")
+    fzgamet.set("Фаза создания")
+    name.place(x=50, y=70 + 20, width=100)
+    hpout.place(x=200, y=70 + 20, width=100)
+    kdout.place(x=350, y=70 + 20, width=100)
+    namehero.place(x=50, y=100 + 20, width=100)
+    hp.place(x=200, y=100 + 20, width=100)
+    kd.place(x=350, y=100 + 20, width=100)
+    revnab.place(x=245, y=180, width=120)
+    endnab.place(x=370, y=180, width=120)
+    chlistbox.delete(0, END)
 
 
 def dpdmg():
@@ -143,10 +215,14 @@ def iskd():
 def vkd():
     global r3
     if r3 == 0:
-        ismkd.place(x=245, y=30, width=30)
+        ismkd.place(x=245, y=30)
+        dobavhero.place(x=245, y=60)
+        obnovhero.place(x=245, y=90)
         r3 += 1
     else:
         ismkd.place_forget()
+        dobavhero.place_forget()
+        obnovhero.place_forget()
         r3 = 0
 
 
@@ -400,15 +476,11 @@ def nabhero():  # Функция для создания героев
     st.append(hph)
     st.append(kdh)
     if soprflag and uizflag is False:
-        st.append('| Сопр -')
         st.append(sopr)
     elif uizflag and soprflag is False:
-        st.append('| Уяз -')
         st.append(uiz)
     elif soprflag is True and uizflag is True:
-        st.append('| Сопр -')
         st.append(sopr)
-        st.append('| Уяз -')
         st.append(uiz)
     print(*st)
     char.append(st)
@@ -512,10 +584,10 @@ def damage():
     if flag:
         dmg = dmg * 2
     if dpflag:
-        if dpdg[0] in sus[4]:
+        if dpdg[0] in list(sus[3][1::]):
             messagebox.showinfo(sus[0], 'Сопротивление')
             dmg = int(dmg / 2)
-        elif dpdg[0] in sus[6]:
+        elif dpdg[0] in list(sus[4][1::]):
             messagebox.showinfo(sus[0], 'Уязвимость')
             dmg = dmg * 2
     sus[1] = sus[1] - dmg
@@ -580,13 +652,17 @@ root = Tk()  # Главное окно
 root.title('Счетчик хп')
 root.geometry('500x220+400+120')
 root.iconphoto(True, PhotoImage(file='D:\Задачи ЕГЭ\Разное\icon.png'))  # подставить свою
-
+root.configure(bg='#FFFFFF')
+image_ismkd = PhotoImage(file='m_smena_kd.png')
+image_prob = PhotoImage(file='m_m_probitie.png')
+image_door = PhotoImage(file='m_Door.png')
 root1 = Tk()  # Дополнительное окно
 root1.title(' ')
 root1.geometry('500x250+400+370')
+root1.configure(bg='#FFFFFF')
 
-MyBtn = Button(root, text="Start", font='Times 40', bg="#FF0000", fg='#FFFFFF', width=3, command=mybtnclick)  # Кнопка
-MyBtn.place(x=200, y=50)
+MyBtn = Button(root, command=mybtnclick, relief='flat', image=image_door)  # Кнопка
+MyBtn.place(x=150, y=0)
 
 nametext = StringVar()
 hptext = StringVar()
@@ -632,16 +708,18 @@ revclickend = Button(root, text='↺', font='Times 40', width=3, fg='#20B2AA', c
 otkat = Button(root, text='⟸', font='Times 11', fg='#FFFFFF', bg='#1E90FF', command=otk)
 dop = Button(root, text='Доп.действия', font='Times 11', fg='#20B2AA', command=dopf)
 pre = Button(root, text='Доп.ВА', font='Times 11', fg='#20B2AA', command=pref)
-inkd = Button(root, text='Изм.Кд', font='Times 11', fg='#20B2AA', command=vkd)
-ismkd = Button(root, text='⊚', font='Times 13', fg='#FFFFFF', bg='#1E90FF', command=iskd)
+inkd = Button(root, text='Герои', font='Times 11', fg='#20B2AA', command=vkd)
+ismkd = Button(root, fg='#FFFFFF', bg='#1E90FF', command=iskd, image=image_ismkd)
 ismkdpl = Button(root, text='+', font='Times 11', fg='#FFFFFF', bg='#1E90FF', command=plus)
 ismkdmn = Button(root, text='-', font='Times 11', fg='#FFFFFF', bg='#1E90FF', command=minus)
-prob = Button(root, text='➴', font='Times 11', fg='#FFFFFF', bg='#1E90FF', command=probf)
+prob = Button(root, fg='#FFFFFF', bg='#1E90FF', command=probf, image=image_prob)
 atk = Button(root, text='Доп.атака', font='Times 11', fg='#20B2AA', command=atkf)
 elnab = Button(root, text='Доб.хар.', font='Times 12', fg='#20B2AA', command=elnabf)
 soprdmg = Button(root1, text='+', font='Times 15', bg='#20B2AA', fg='#eee', command=soprf, width=3)
 uizdmg = Button(root1, text='+', font='Times 15', bg='#20B2AA', fg='#eee', command=uizf, width=3)
 dpdmg = Button(root1, text='+', font='Times 15', bg='#20B2AA', fg='#eee', command=dpdmg, width=3)
+dobavhero = Button(root, text='+', font='Times 15', bg='#20B2AA', fg='#eee', command=dobavherof, width=3)
+obnovhero = Button(root, text='-', font='Times 15', bg='#20B2AA', fg='#eee', command=obnovherof, width=3)
 
 chlistbox = Listbox(root, height=3, width=20, selectmode=SINGLE)  # Список с героями
 
@@ -661,8 +739,8 @@ for y in ur:
 
 tp = IntVar()
 tp.set(10)
-pry = Radiobutton(root, text='Преим.', fg='#00FF00', bg='#1E90FF', variable=tp, value=1)
-pm = Radiobutton(root, text='Помех.', fg='#00FF00', bg='#1E90FF', variable=tp, value=2)
-pmn = Radiobutton(root, text='Норма.', fg='#00FF00', bg='#1E90FF', variable=tp, value=0)
+pry = Radiobutton(root, text='Преим.', fg='#000000', bg='#1E90FF', variable=tp, value=1)
+pm = Radiobutton(root, text='Помех.', fg='#000000', bg='#1E90FF', variable=tp, value=2)
+pmn = Radiobutton(root, text='Норма.', fg='#000000', bg='#1E90FF', variable=tp, value=0)
 
 root.mainloop()
