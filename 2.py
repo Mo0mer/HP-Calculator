@@ -590,13 +590,13 @@ ctherot = StringVar()
 fzgamet = StringVar()
 kritt = StringVar()
 
-name = Label(root, textvariable=nametext, fg="#FFF8DC", bg="#800000", font='Times 14')  # Имя героя(текст)
-hpout = Label(root, textvariable=hptext, fg="#FFF8DC", bg="#800000", font='Times 14')  # Хп героя(текст)
-kdout = Label(root, textvariable=kdtext, fg="#FFF8DC", bg="#800000", font='Times 14')  # Кд героя(текст)
-bonpout = Label(root, textvariable=bonpt, fg="#FFF8DC", bg="#800000", font='Times 14')  # Бонус к попаданию(текст)
-cthero = Label(root, textvariable=ctherot, fg="#FFF8DC", bg="#800000", font='Times 14')  # Кол-во героев(текст)
-fzgame = Label(root, textvariable=fzgamet, fg="#FFF8DC", bg="#800000", font='Times 14')  # Фаза игры
-krit = Label(root, textvariable=kritt, fg="#FFF8DC", bg="#800000", font='Times 14')
+name = Label(root, textvariable=nametext, fg="#000000", bg="#B68E6D", font='Times 14')  # Имя героя(текст)
+hpout = Label(root, textvariable=hptext, fg="#000000", bg="#B68E6D", font='Times 14')  # Хп героя(текст)
+kdout = Label(root, textvariable=kdtext, fg="#000000", bg="#B68E6D", font='Times 14')  # Кд героя(текст)
+bonpout = Label(root, textvariable=bonpt, fg="#000000", bg="#B68E6D", font='Times 14')  # Бонус к попаданию(текст)
+cthero = Label(root, textvariable=ctherot, fg="#000000", bg="#B68E6D", font='Times 14')  # Кол-во героев(текст)
+fzgame = Label(root, textvariable=fzgamet, fg="#000000", bg="#B68E6D", font='Times 14')  # Фаза игры
+krit = Label(root, textvariable=kritt, fg="#000000", bg="#B68E6D", font='Times 14')
 
 nameinp = StringVar()
 hpinp = StringVar()
@@ -612,27 +612,27 @@ hp = Entry(root, textvariable=hpinp)  # Ввод хп героя
 kd = Entry(root, textvariable=kdinp)  # Ввод кд героя
 hl = Entry(root, textvariable=hilinp)  # Ввод хила
 
-revnab = Button(root, text="Добавить героя", font='Times 12', fg="#FFF8DC", command=nabhero)  # Кнопка +герой
-endnab = Button(root, text='Закончить набор', font='Times 12', fg='#FFF8DC', command=choiceplace)  # Кнопка завершения
-atackclick = Button(root, text='Атака', font='Times 18', fg='#FFF8DC', command=prdamage)  # Кнопка ОК
-dmgclick = Button(root, text='Бам!', font='Times 18', fg='#FFF8DC', command=damage)  # Кнопка нанесения урона
-hilclick = Button(root, text='Исцеление', font='Times 18', fg='#FFF8DC', command=hil)  # Кнопка исцеления
-choiceclick = Button(root, text='OK', font='Times 18', fg='#FFF8DC', command=nextfaze)  # Кнопка продолжения
-revclick = Button(root, text='↺', font='Times 11', width=3, fg='#FFF8DC', bg='#800000', command=rever)
-revclickend = Button(root, text='↺', font='Times 40', width=3, fg='#FFF8DC', command=reverend)
-otkat = Button(root, text='⟸', font='Times 11', fg='#FFF8DC', bg='#800000', command=otk)
-dop = Button(root, text='Доп.действия', font='Times 11', fg='#FFF8DC', command=dopf)
-pre = Button(root, text='Доп.ВА', font='Times 11', fg='#FFF8DC', command=pref)
-inkd = Button(root, text='Изм.Кд', font='Times 11', fg='#FFF8DC', command=vkd)
-ismkd = Button(root, text='⊚', font='Times 13', fg='#FFF8DC', bg='#800000', command=iskd)
-ismkdpl = Button(root, text='+', font='Times 11', fg='#FFF8DC', bg='#800000', command=plus)
-ismkdmn = Button(root, text='-', font='Times 11', fg='#FFF8DC', bg='#800000', command=minus)
-prob = Button(root, text='➴', font='Times 11', fg='#FFF8DC', bg='#800000', command=probf)
-atk = Button(root, text='Доп.атака', font='Times 11', fg='#FFF8DC', command=atkf)
-elnab = Button(root, text='Доб.хар.', font='Times 11', fg='#FFF8DC', command=elnabf)
-soprdmg = Button(root1, text='Доб.сопр', font='Times 11', fg='#FFF8DC', command=soprf)
-uizdmg = Button(root1, text='Доб.уязв', font='Times 11', fg='#FFF8DC', command=uizf)
-dpdmg = Button(root1, text='Доб.урон', font='Times 11', fg='#FFF8DC', command=dpdmg)
+revnab = Button(root, text="Добавить героя", font='Times 12', fg="#000000", command=nabhero)  # Кнопка +герой
+endnab = Button(root, text='Закончить набор', font='Times 12', fg='#000000', command=choiceplace)  # Кнопка завершения
+atackclick = Button(root, text='Атака', font='Times 18', fg='#000000', command=prdamage)  # Кнопка ОК
+dmgclick = Button(root, text='Бам!', font='Times 18', fg='#000000', command=damage)  # Кнопка нанесения урона
+hilclick = Button(root, text='Исцеление', font='Times 18', fg='#000000', command=hil)  # Кнопка исцеления
+choiceclick = Button(root, text='OK', font='Times 18', fg='#000000', command=nextfaze)  # Кнопка продолжения
+revclick = Button(root, text='↺', font='Times 11', width=3, fg='#000000', bg='#B68E6D', command=rever)
+revclickend = Button(root, text='↺', font='Times 40', width=3, fg='#000000', command=reverend)
+otkat = Button(root, text='⟸', font='Times 11', fg='#000000', bg='#B68E6D', command=otk)
+dop = Button(root, text='Доп.действия', font='Times 11', fg='#000000', command=dopf)
+pre = Button(root, text='Доп.ВА', font='Times 11', fg='#000000', command=pref)
+inkd = Button(root, text='Изм.Кд', font='Times 11', fg='#000000', command=vkd)
+ismkd = Button(root, text='⊚', font='Times 13', fg='#000000', bg='#B68E6D', command=iskd)
+ismkdpl = Button(root, text='+', font='Times 11', fg='#000000', bg='#B68E6D', command=plus)
+ismkdmn = Button(root, text='-', font='Times 11', fg='#000000', bg='#B68E6D', command=minus)
+prob = Button(root, text='➴', font='Times 11', fg='#000000', bg='#B68E6D', command=probf)
+atk = Button(root, text='Доп.атака', font='Times 11', fg='#000000', command=atkf)
+elnab = Button(root, text='Доб.хар.', font='Times 11', fg='#000000', command=elnabf)
+soprdmg = Button(root1, text='Доб.сопр', font='Times 11', fg='#000000', command=soprf)
+uizdmg = Button(root1, text='Доб.уязв', font='Times 11', fg='#000000', command=uizf)
+dpdmg = Button(root1, text='Доб.урон', font='Times 11', fg='#000000', command=dpdmg)
 
 chlistbox = Listbox(root, height=3, width=20, selectmode=SINGLE)  # Список с героями
 
@@ -652,8 +652,8 @@ for y in ur:
 
 tp = IntVar()
 tp.set(10)
-pry = Radiobutton(root, text='Преим.', fg='#FFF8DC', bg='#800000', variable=tp, value=1)
-pm = Radiobutton(root, text='Помех.', fg='#FFF8DC', bg='#800000', variable=tp, value=2)
-pmn = Radiobutton(root, text='Норма.', fg='#FFF8DC', bg='#800000', variable=tp, value=0)
+pry = Radiobutton(root, text='Преим.', fg='#000000', bg='#B68E6D', variable=tp, value=1)
+pm = Radiobutton(root, text='Помех.', fg='#000000', bg='#B68E6D', variable=tp, value=2)
+pmn = Radiobutton(root, text='Норма.', fg='#000000', bg='#B68E6D', variable=tp, value=0)
 
 root.mainloop()
