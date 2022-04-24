@@ -593,7 +593,7 @@ kritt = StringVar()
 name = Label(root, textvariable=nametext, fg="#000000", bg="#FFE1C9", font='Times 14')  # Имя героя(текст)
 hpout = Label(root, textvariable=hptext, fg="#000000", bg="#FFE1C9", font='Times 14')  # Хп героя(текст)
 kdout = Label(root, textvariable=kdtext, fg="#000000", bg="#FFE1C9", font='Times 14')  # Кд героя(текст)
-bonpout = Label(root, textvariable=bonpt, fg="#000000", bg="#B68E6D", font='Times 14')  # Бонус к попаданию(текст)
+bonpout = Label(root, textvariable=bonpt, fg="#000000", bg="#FFE1C9", font='Times 14')  # Бонус к попаданию(текст)
 cthero = Label(root, textvariable=ctherot, fg="#000000", bg="#FF9842", font='Times 14')  # Кол-во героев(текст)
 fzgame = Label(root, textvariable=fzgamet, fg="#000000", bg="#FFA55A", font='Times 14')  # Фаза игры
 krit = Label(root, textvariable=kritt, fg="#000000", bg="#B68E6D", font='Times 14')
@@ -614,9 +614,9 @@ hl = Entry(root, textvariable=hilinp)  # Ввод хила
 
 revnab = Button(root, bg="#FFA55A", text="Добавить героя", font='Times 12', fg="#000000", command=nabhero)  # Кнопка +герой
 endnab = Button(root, bg="#FFA55A", text='Закончить набор', font='Times 12', fg='#000000', command=choiceplace)  # Кнопка завершения
-atackclick = Button(root, bg="#FF9842", text='Атака', font='Times 18', fg='#000000', command=prdamage)  # Кнопка ОК
+atackclick = Button(root, bg="#A64933", text='Атака', font='Times 18', fg='#000000', command=prdamage)  # Кнопка ОК
 dmgclick = Button(root, bg="#B68E6D", text='Бам!', font='Times 18', fg='#000000', command=damage)  # Кнопка нанесения урона
-hilclick = Button(root, bg="#B68E6D", text='Исцеление', font='Times 18', fg='#000000', command=hil)  # Кнопка исцеления
+hilclick = Button(root, bg="#FFA55A", text='Исцеление', font='Times 18', fg='#000000', command=hil)  # Кнопка исцеления
 choiceclick = Button(root, bg="#B68E6D", text='OK', font='Times 18', fg='#000000', command=nextfaze)  # Кнопка продолжения
 revclick = Button(root, text='↺', font='Times 11', width=3, fg='#000000', bg='#B68E6D', command=rever)
 revclickend = Button(root, bg="#B68E6D", text='↺', font='Times 40', width=3, fg='#000000', command=reverend)
@@ -630,8 +630,8 @@ ismkdmn = Button(root, text='-', font='Times 11', fg='#000000', bg='#B68E6D', co
 prob = Button(root, text='➴', font='Times 11', fg='#000000', bg='#B68E6D', command=probf)
 atk = Button(root, text='Доп.атака', font='Times 11', bg="#FFE1C9", fg='#000000', command=atkf)
 elnab = Button(root, text='Доб.хар.', font='Times 11', bg="#FFA55A", fg='#000000', command=elnabf)
-soprdmg = Button(root1, text='Доб.сопр', font='Times 11', bg="#B68E6D", fg='#000000', command=soprf)
-uizdmg = Button(root1, text='Доб.уязв', font='Times 11', bg="#B68E6D", fg='#000000', command=uizf)
+soprdmg = Button(root1, text='Доб.сопр', font='Times 11', bg="#FFE1C9", fg='#000000', command=soprf)
+uizdmg = Button(root1, text='Доб.уязв', font='Times 11', bg="#FFE1C9", fg='#000000', command=uizf)
 dpdmg = Button(root1, text='Доб.урон', font='Times 11', bg="#B68E6D", fg='#000000', command=dpdmg)
 
 chlistbox = Listbox(root, height=3, width=20, selectmode=SINGLE)  # Список с героями
