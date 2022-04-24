@@ -590,7 +590,7 @@ ctherot = StringVar()
 fzgamet = StringVar()
 kritt = StringVar()
 
-name = Label(root.configure(bg='#B68E6D'), textvariable=nametext, fg="#000000", bg="#B68E6D", font='Times 14')  # Имя героя(текст)
+name = Label(root.configure(bg='#FF0000'), textvariable=nametext, fg="#000000", bg="#B68E6D", font='Times 14')  # Имя героя(текст)
 hpout = Label(root.configure(bg='#B68E6D'), textvariable=hptext, fg="#000000", bg="#B68E6D", font='Times 14')  # Хп героя(текст)
 kdout = Label(root.configure(bg='#B68E6D'), textvariable=kdtext, fg="#000000", bg="#B68E6D", font='Times 14')  # Кд героя(текст)
 bonpout = Label(root.configure(bg='#B68E6D'), textvariable=bonpt, fg="#000000", bg="#B68E6D", font='Times 14')  # Бонус к попаданию(текст)
