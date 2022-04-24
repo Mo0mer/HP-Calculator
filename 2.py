@@ -618,16 +618,16 @@ atackclick = Button(root, bg="#A64933", text='Атака', font='Times 18', fg='
 dmgclick = Button(root, bg="#B68E6D", text='Бам!', font='Times 18', fg='#000000', command=damage)  # Кнопка нанесения урона
 hilclick = Button(root, bg="#FFA55A", text='Исцеление', font='Times 18', fg='#000000', command=hil)  # Кнопка исцеления
 choiceclick = Button(root, bg="#B68E6D", text='OK', font='Times 18', fg='#000000', command=nextfaze)  # Кнопка продолжения
-revclick = Button(root, text='↺', font='Times 11', width=3, fg='#000000', bg='#A66433', command=rever)
-revclickend = Button(root, bg="#B68E6D", text='↺', font='Times 40', width=3, fg='#000000', command=reverend)
-otkat = Button(root, text='⟸', font='Times 11', fg='#000000', bg='#A66433', command=otk)
+revclick = Button(root, text='↺', font='Times 11', width=3, fg='#FFE0C9', bg='#A66433', command=rever)
+revclickend = Button(root, bg="#B68E6D", text='↺', font='Times 40', width=3, fg='#FFE0C9', command=reverend)
+otkat = Button(root, text='⟸', font='Times 11', fg='#FFE0C9', bg='#A66433', command=otk)
 dop = Button(root, bg="#FFE1C9", text='Доп.действия', font='Times 11', fg='#000000', command=dopf)
 pre = Button(root, bg="#FFE1C9", text='Доп.ВА', font='Times 11', fg='#000000', command=pref)
 inkd = Button(root, bg="#FFE1C9", text='Изм.Кд', font='Times 11', fg='#000000', command=vkd)
-ismkd = Button(root, text='⊚', font='Times 13', fg='#000000', bg='#A66433', command=iskd)
-ismkdpl = Button(root, text='+', font='Times 11', fg='#000000', bg='#A66433', command=plus)
-ismkdmn = Button(root, text='-', font='Times 11', fg='#000000', bg='#A66433', command=minus)
-prob = Button(root, text='➴', font='Times 11', fg='#000000', bg='#A66433', command=probf)
+ismkd = Button(root, text='⊚', font='Times 13', fg='#FFE0C9', bg='#A66433', command=iskd)
+ismkdpl = Button(root, text='+', font='Times 11', fg='#FFE0C9', bg='#A66433', command=plus)
+ismkdmn = Button(root, text='-', font='Times 11', fg='#FFE0C9', bg='#A66433', command=minus)
+prob = Button(root, text='➴', font='Times 11', fg='#FFE0C9', bg='#A66433', command=probf)
 atk = Button(root, text='Доп.атака', font='Times 11', bg="#FFE1C9", fg='#000000', command=atkf)
 elnab = Button(root, text='Доб.хар.', font='Times 11', bg="#FFA55A", fg='#000000', command=elnabf)
 soprdmg = Button(root1, text='Доб.сопр', font='Times 11', bg="#FFE1C9", fg='#000000', command=soprf)
@@ -652,8 +652,8 @@ for y in ur:
 
 tp = IntVar()
 tp.set(10)
-pry = Radiobutton(root, text='Преим.', fg='#000000', bg='#B68E6D', variable=tp, value=1)
-pm = Radiobutton(root, text='Помех.', fg='#000000', bg='#B68E6D', variable=tp, value=2)
-pmn = Radiobutton(root, text='Норма.', fg='#000000', bg='#B68E6D', variable=tp, value=0)
+pry = Radiobutton(root, text='Преим.', fg='#FFE0C9', bg='#A66433', variable=tp, value=1)
+pm = Radiobutton(root, text='Помех.', fg='#FFE0C9', bg='#A66433', variable=tp, value=2)
+pmn = Radiobutton(root, text='Норма.', fg='#FFE0C9', bg='#A66433', variable=tp, value=0)
 
 root.mainloop()
