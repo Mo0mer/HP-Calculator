@@ -612,27 +612,27 @@ hp = Entry(root, textvariable=hpinp)  # Ввод хп героя
 kd = Entry(root, textvariable=kdinp)  # Ввод кд героя
 hl = Entry(root, textvariable=hilinp)  # Ввод хила
 
-revnab = Button(root, text="Добавить героя", font='Times 12', fg="#000000", command=nabhero)  # Кнопка +герой
-endnab = Button(root, text='Закончить набор', font='Times 12', fg='#000000', command=choiceplace)  # Кнопка завершения
-atackclick = Button(root, text='Атака', font='Times 18', fg='#000000', command=prdamage)  # Кнопка ОК
-dmgclick = Button(root, text='Бам!', font='Times 18', fg='#000000', command=damage)  # Кнопка нанесения урона
-hilclick = Button(root, text='Исцеление', font='Times 18', fg='#000000', command=hil)  # Кнопка исцеления
-choiceclick = Button(root, text='OK', font='Times 18', fg='#000000', command=nextfaze)  # Кнопка продолжения
+revnab = Button(root, bg="#B68E6D", text="Добавить героя", font='Times 12', fg="#000000", command=nabhero)  # Кнопка +герой
+endnab = Button(root, bg="#B68E6D", text='Закончить набор', font='Times 12', fg='#000000', command=choiceplace)  # Кнопка завершения
+atackclick = Button(root, bg="#B68E6D", text='Атака', font='Times 18', fg='#000000', command=prdamage)  # Кнопка ОК
+dmgclick = Button(root, bg="#B68E6D", text='Бам!', font='Times 18', fg='#000000', command=damage)  # Кнопка нанесения урона
+hilclick = Button(root, bg="#B68E6D", text='Исцеление', font='Times 18', fg='#000000', command=hil)  # Кнопка исцеления
+choiceclick = Button(root, bg="#B68E6D", text='OK', font='Times 18', fg='#000000', command=nextfaze)  # Кнопка продолжения
 revclick = Button(root, text='↺', font='Times 11', width=3, fg='#000000', bg='#B68E6D', command=rever)
-revclickend = Button(root, text='↺', font='Times 40', width=3, fg='#000000', command=reverend)
+revclickend = Button(root, bg="#B68E6D", text='↺', font='Times 40', width=3, fg='#000000', command=reverend)
 otkat = Button(root, text='⟸', font='Times 11', fg='#000000', bg='#B68E6D', command=otk)
-dop = Button(root, text='Доп.действия', font='Times 11', fg='#000000', command=dopf)
-pre = Button(root, text='Доп.ВА', font='Times 11', fg='#000000', command=pref)
-inkd = Button(root, text='Изм.Кд', font='Times 11', fg='#000000', command=vkd)
+dop = Button(root, bg="#B68E6D", text='Доп.действия', font='Times 11', fg='#000000', command=dopf)
+pre = Button(root, bg="#B68E6D", text='Доп.ВА', font='Times 11', fg='#000000', command=pref)
+inkd = Button(root, bg="#B68E6D", text='Изм.Кд', font='Times 11', fg='#000000', command=vkd)
 ismkd = Button(root, text='⊚', font='Times 13', fg='#000000', bg='#B68E6D', command=iskd)
 ismkdpl = Button(root, text='+', font='Times 11', fg='#000000', bg='#B68E6D', command=plus)
 ismkdmn = Button(root, text='-', font='Times 11', fg='#000000', bg='#B68E6D', command=minus)
 prob = Button(root, text='➴', font='Times 11', fg='#000000', bg='#B68E6D', command=probf)
-atk = Button(root, text='Доп.атака', font='Times 11', fg='#000000', command=atkf)
-elnab = Button(root, text='Доб.хар.', font='Times 11', fg='#000000', command=elnabf)
-soprdmg = Button(root1, text='Доб.сопр', font='Times 11', fg='#000000', command=soprf)
-uizdmg = Button(root1, text='Доб.уязв', font='Times 11', fg='#000000', command=uizf)
-dpdmg = Button(root1, text='Доб.урон', font='Times 11', fg='#000000', command=dpdmg)
+atk = Button(root, text='Доп.атака', font='Times 11', bg="#B68E6D", fg='#000000', command=atkf)
+elnab = Button(root, text='Доб.хар.', font='Times 11', bg="#B68E6D", fg='#000000', command=elnabf)
+soprdmg = Button(root1, text='Доб.сопр', font='Times 11', bg="#B68E6D", fg='#000000', command=soprf)
+uizdmg = Button(root1, text='Доб.уязв', font='Times 11', bg="#B68E6D", fg='#000000', command=uizf)
+dpdmg = Button(root1, text='Доб.урон', font='Times 11', bg="#B68E6D", fg='#000000', command=dpdmg)
 
 chlistbox = Listbox(root, height=3, width=20, selectmode=SINGLE)  # Список с героями
 
